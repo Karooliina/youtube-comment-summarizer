@@ -1,16 +1,19 @@
 "use server";
 
-import { getVideoCommets } from "./lib/getVideoComments";
+import { Form } from "./components/form";
+//import { getVideoCommets } from "./lib/getVideoComments";
 
-export default async function Home() {
-  const comments = await getVideoCommets("wFNTeZsA6vE");
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const videoId = (searchParams["videoId"] as string) ?? "";
+  //const comments = videoId ? await getVideoCommets(videoId) : [];
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <form>
-        <label>Youtube link</label>
-        <input className="border-gray-400 w-full bg-slate-600" />
-      </form>
+      <Form label="Youtube video id" searchKey="videoId" initQuery={videoId} />
     </main>
   );
 }

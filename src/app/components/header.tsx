@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
-    <div className="static top-0 left-0 w-full bg-red-200 p-5">
-      <span>Youtube comments summarizer</span>
-    </div>
+    <header className="static top-0 left-0 w-full p-5 border-b border-gray-500">
+      <h1>Youtube comments summarizer</h1>
+    </header>
   );
 };
