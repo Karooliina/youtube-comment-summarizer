@@ -1,8 +1,11 @@
 "use server";
 
 import axios, { AxiosError } from "axios";
+import { CommentType } from "../types/Comment";
 
-export const getVideoCommets = async (videoId: string) => {
+export const getVideoCommets = async (
+  videoId: string
+): Promise<CommentType[]> => {
   const youtubeApiUrl = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${process.env.YOUTUBE_API_KEY}`;
 
   const result = await axios
