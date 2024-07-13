@@ -1,8 +1,8 @@
 "use client";
 
-import { ChangeEvent, FormEvent, FormEventHandler, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useQueryParams } from "../hooks/useQueryParams";
-import { Button } from "./button";
+import { Button } from "./Button";
 
 export const Form = ({
   label,
